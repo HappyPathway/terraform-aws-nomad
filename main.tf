@@ -83,7 +83,7 @@ module "leaf_tls_self_signed_cert" {
 }
 
 data "template_file" "bastion_user_data" {
-  template = "${file("${path.module}/../../templates/best-practices-bastion-systemd.sh.tpl")}"
+  template = "${file("${path.module}/templates/best-practices-bastion-systemd.sh.tpl")}"
 
   vars = {
     name            = "${var.name}"
@@ -125,7 +125,7 @@ module "network_aws" {
 }
 
 data "template_file" "consul_user_data" {
-  template = "${file("${path.module}/../../templates/best-practices-consul-systemd.sh.tpl")}"
+  template = "${file("${path.module}/templates/best-practices-consul-systemd.sh.tpl")}"
 
   vars = {
     name             = "${var.name}"
@@ -168,7 +168,7 @@ module "consul_aws" {
 }
 
 data "template_file" "vault_user_data" {
-  template = "${file("${path.module}/../../templates/best-practices-vault-systemd.sh.tpl")}"
+  template = "${file("${path.module}/templates/best-practices-vault-systemd.sh.tpl")}"
 
   vars = {
     name            = "${var.name}"
@@ -215,7 +215,7 @@ module "vault_aws" {
 }
 
 data "template_file" "nomad_server_best_practices" {
-  template = "${file("${path.module}/../../templates/best-practices-nomad-server-systemd.sh.tpl")}"
+  template = "${file("${path.module}/templates/best-practices-nomad-server-systemd.sh.tpl")}"
 
   vars = {
     name            = "${var.name}"
@@ -262,7 +262,7 @@ module "nomad_server_aws" {
 }
 
 data "template_file" "nomad_client_best_practices" {
-  template = "${file("${path.module}/../../templates/best-practices-nomad-client-systemd.sh.tpl")}"
+  template = "${file("${path.module}/templates/best-practices-nomad-client-systemd.sh.tpl")}"
 
   vars = {
     name            = "${var.name}"
